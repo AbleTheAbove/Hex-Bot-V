@@ -1,0 +1,22 @@
+{
+  "name": "hex-bot-v",
+  "version": "1.0.0",
+  "description": "The fifth iteration of Hex Bot.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HexExecute/Hex-Bot-V.git"
+  },
+  "author": "Hex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HexExecute/Hex-Bot-V/issues"
+  },
+  "homepage": "https://github.com/HexExecute/Hex-Bot-V#readme",
+  "dependencies": {
+    "discord.js": "^13.3.1"
+  }
+}
