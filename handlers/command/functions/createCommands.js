@@ -11,7 +11,9 @@ module.exports = Commands => {
 
             Commands.create({
                 name: cmd.name,
-                description: cmd.description
+                description: cmd.description,
+                permissions: cmd.permissions,
+                options: cmd.options
             })
             
             console.log(`V -> Command Handler -> Command -> ${cmd.name[0].toUpperCase()}${cmd.name.slice(1)} -> State -> Online`)
