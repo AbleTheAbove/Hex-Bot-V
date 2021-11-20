@@ -8,7 +8,8 @@ module.exports = {
     Client: new discord.Client({
         intents: [
             discord.Intents.FLAGS.GUILD_MESSAGES,
-            discord.Intents.FLAGS.GUILD_MEMBERS
+            discord.Intents.FLAGS.GUILD_MEMBERS,
+            discord.Intents.FLAGS.GUILDS
         ]
     })
 }

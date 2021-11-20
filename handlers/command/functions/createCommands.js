@@ -12,7 +12,6 @@ module.exports = Commands => {
             Commands.create({
                 name: cmd.name,
                 description: cmd.description,
-                permissions: cmd.permissions,
                 options: cmd.options
             })
             
