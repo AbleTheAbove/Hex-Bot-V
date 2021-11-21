@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/HexExecute/Hex-Bot-V#readme",
   "dependencies": {
-    "discord.js": "^13.3.1"
+    "discord.js": "^13.3.1",
+    "mongoose": "^6.0.13"
   }
 }

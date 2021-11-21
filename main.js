@@ -1,10 +1,11 @@
 const Bot = require('./assets/Bot.js')
 const CommandHandler = require('./handlers/command/Handler.js')
 
-Bot.Client.once('ready', () => {
+Bot.Client.once('ready', async () => {
     console.log('V -> State -> Online')
 
-    CommandHandler.Run()
+    Bot.Mongoose.Connect()
+        .then( () => CommandHandler.Run() )
 })
 
 Bot.Client.login(Bot.Config.Token)
