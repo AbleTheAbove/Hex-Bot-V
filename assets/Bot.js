@@ -5,7 +5,8 @@ const mongoose = require('mongoose')
 module.exports = {
     Discord: discord,
     Config: config,
-    Mongoose: {
+    MongoDB: {
+        Mongoose: mongoose,
         Connect: () => {
             return mongoose
                 .connect(config.MongoDB.Connect, {
