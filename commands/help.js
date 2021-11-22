@@ -4,6 +4,14 @@ const Bot = require('../assets/Bot.js')
 module.exports = {
     name: 'help',
     description: 'A command to get help on other commands.',
+    options: [
+        {
+            name: 'cmd',
+            type: 'STRING',
+            description: 'Which command to send information about.',
+            required: false
+        }
+    ],
 
     run: interaction => {
         fs.readdir('./commands/', (err, files) => {

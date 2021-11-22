@@ -21,8 +21,6 @@ module.exports = interaction => {
             })
         } else
             args[option.name] = option.value
-
-    console.log(args)
-
+    
     return args
 }
