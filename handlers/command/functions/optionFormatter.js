@@ -1,23 +1,28 @@
 module.exports = interaction => {
-    if (interaction.options.data[0]) {
-        const commandOptions = []
-        let option = interaction.options.data[0]
-    
-        if (option.value)
-            commandOptions.push(option.value)
-        else if (option.type === 'SUB_COMMAND_GROUP') {
-            commandOptions.push(option.name)
-            option = option.options[0]
-        }
-    
-    
-        if (option.type === 'SUB_COMMAND')
-            commandOptions.push(option.name)
-    
-        if (Array.isArray(option.options))
-            option.options.forEach(subOption =>
-                commandOptions.push(`${subOption.name}: ${subOption.value}`))
-    
-        return commandOptions.join(' ')
-    } else return null
+
+    if (!interaction.options.data[0])
+        return null
+
+    let args = {}
+
+    for (option of interaction.options.data)
+        if (option.type === 'SUB_COMMAND') {
+            args[option.name] = {}
+            option.options.forEach(subOption => {
+                args[option.name][subOption.name] = subOption.value
+            })
+        } else if (option.type === 'SUB_COMMAND_GROUP') {
+            args[option.name] = {}
+            option.options.forEach(subOption => {
+                args[option.name][subOption.name] = {}
+                subOption.options.forEach(dSubOption => {
+                    args[option.name][subOption.name][dSubOption.name] = dSubOption.value
+                })
+            })
+        } else
+            args[option.name] = option.value
+
+    console.log(args)
+
+    return args
 }
