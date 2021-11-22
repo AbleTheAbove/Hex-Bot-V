@@ -5,13 +5,7 @@ Bot.Client.once('ready', async () => {
     console.log('V -> State -> Online')
 
     Bot.MongoDB.Connect()
-        .then(() => {
-            try {
-                CommandHandler.Run() 
-            } finally {
-                Bot.MongoDB.Mongoose.connection.close()
-            }
-        })
+        .then( () => CommandHandler.Run() )
 })
 
 Bot.Client.login(Bot.Config.Token)
