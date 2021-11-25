@@ -1,0 +1,10 @@
+* {
+	--background-color: #242b35;
+	--header-text-color: #ebebeb;
+	--default-text-color: #cccccc;
+}
+
+body {
+	background-color: var(--background-color);
+	color: var(--default-text-color);
+}
