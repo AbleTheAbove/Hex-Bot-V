@@ -1,1 +1,7 @@
-{"Token":"OTA4NDAwMTA1OTA2OTE3Mzc3.YY1Lhg.Ol821XHdo23jDmGi1R1lC2HGz8Y","Guild":"837767108867784754","MongoDB":{"Connect":"mongodb+srv://hex-bot-v:HexBotLoginToken@cluster0.xcstj.mongodb.net/Data"}}
+{
+	"Token": "OTA4NDAwMTA1OTA2OTE3Mzc3.YY1Lhg.Ol821XHdo23jDmGi1R1lC2HGz8Y",
+	"Guild": "837767108867784754",
+	"MongoDB": {
+		"Connect": "mongodb+srv://hex-bot-v:HexBotLoginToken@cluster0.xcstj.mongodb.net/Data"
+	}
+}
