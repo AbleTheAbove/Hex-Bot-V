@@ -13,7 +13,9 @@ function updateConfig() {
 	}
 }
 
-function updateConfig(setting) {
+updateConfig()
+
+function changeConfig(setting) {
 	let value = document.getElementById(setting).value
 
 	let request = new XMLHttpRequest()
