@@ -3,6 +3,7 @@ const config = require('../assets/files/Config.json')
 const mongoose = require('mongoose')
 
 module.exports = {
+	MuteRole: config.muteRole,
 	Discord: discord,
 	Config: config,
 	MongoDB: {

@@ -10,6 +10,7 @@ function updateConfig() {
 
 		document.getElementById('Token').value = Config.Token
 		document.getElementById('Guild').value = Config.Guild
+		document.getElementById('MuteRole').value = Config.MuteRole
 	}
 }
 

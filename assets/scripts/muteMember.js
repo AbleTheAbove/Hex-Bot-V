@@ -1,1 +1,5 @@
-module.exports = (member) => {}
+const Bot = require('../Bot.js')
+
+module.exports = (member) => {
+    
+}
