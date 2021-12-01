@@ -3,7 +3,7 @@ function updateConfig() {
 	request.open('GET', 'http://localhost:3000/api/config')
 	request.send()
 
-	request.onload = (err) => {
+	request.onload = err => {
 		if (err) console.error(err)
 
 		let Config = JSON.parse(request.response)
@@ -23,7 +23,7 @@ function changeConfig(setting) {
 	request.open('POST', `http://localhost:3000/api/config/${setting}/${value}`)
 	request.send()
 
-	request.onload = (err) => {
+	request.onload = err => {
 		if (err) console.error(err)
 	}
 }

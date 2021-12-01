@@ -1,7 +1,7 @@
 const fs = require('fs')
 const ConfigDir = './assets/files/Config.json'
 
-module.exports = (app) =>
+module.exports = app =>
 	app.post('/api/config/:setting/:value', (req, res) => {
 		let { setting } = req.params
 		let { value } = req.params

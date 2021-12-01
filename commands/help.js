@@ -44,7 +44,7 @@ module.exports = {
 
 			if (args) {
 				let file = files.find(
-					(file) => file.replace('.js', '') == args.cmd.toLowerCase()
+					file => file.replace('.js', '') == args.cmd.toLowerCase()
 				)
 
 				if (file)
@@ -54,7 +54,7 @@ module.exports = {
 
 			let embeds = []
 
-			files.forEach((file) => embeds.push(getHelpEmbed(file)))
+			files.forEach(file => embeds.push(getHelpEmbed(file)))
 
 			return interaction.reply({ embeds: embeds })
 		})

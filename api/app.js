@@ -12,7 +12,7 @@ module.exports = {
 		fs.readdir('./api/routes/', (err, files) => {
 			if (err) return console.error(err)
 
-			files.forEach((file) => {
+			files.forEach(file => {
 				let route = require(`./routes/${file}`)
 
 				route(app)

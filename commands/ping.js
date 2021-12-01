@@ -4,7 +4,7 @@ module.exports = {
 	syntax: '/ping',
 	permissions: ['ADMINISTRATOR'],
 
-	run: (interaction) => {
+	run: interaction => {
 		return interaction.reply('Pong!')
 	}
 }

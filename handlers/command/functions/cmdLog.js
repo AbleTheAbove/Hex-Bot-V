@@ -21,8 +21,8 @@ module.exports = (Bot, interaction, cmd, args) => {
 	})
 
 	log.save()
-		.then((res) => console.log(res))
-		.catch((err) => console.error(err))
+		.then(res => console.log(res))
+		.catch(err => console.error(err))
 
 	return console.log('V -> Mongoose -> Log -> Slash Command')
 }

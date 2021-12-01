@@ -1,8 +1,8 @@
 const cmdLog = require('./cmdLog.js')
 const optionFormatter = require('./optionFormatter.js')
 
-module.exports = (Bot) => {
-	Bot.Client.on('interactionCreate', (interaction) => {
+module.exports = Bot => {
+	Bot.Client.on('interactionCreate', interaction => {
 		if (!interaction.isCommand()) return
 		else {
 			let cmd = require(`../../../commands/${interaction.commandName}.js`)
