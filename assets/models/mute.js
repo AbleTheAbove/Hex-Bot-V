@@ -11,7 +11,7 @@ const muteSchema = Bot.MongoDB.Mongoose.Schema({
 	},
 	userID: reqString,
 	staffID: reqString,
-	reason: reqString
+	reason: String
 })
 
 module.exports = Bot.MongoDB.Mongoose.model('Mute', muteSchema)
