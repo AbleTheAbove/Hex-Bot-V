@@ -5,10 +5,10 @@ const ms = require('ms')
 
 const checkMutes = require('../assets/scripts/checkMutes.js')
 
-function newMute(args, interaction, shouldExpire) {
+async function newMute(args, interaction, shouldExpire) {
 	let expires = null
 
-	if (shouldExpire) expires = new Date(new Date().getTime() + ms(args.time))
+	if (shouldExpire) expires = new Date(Date.now() + ms(args.time))
 
 	const mute = new muteSchema({
 		_id: Bot.MongoDB.Mongoose.Types.ObjectId(),
@@ -19,7 +19,9 @@ function newMute(args, interaction, shouldExpire) {
 		reason: args.reason
 	})
 
-	mute.save()
+	await mute.save()
+
+	checkMutes(Bot)
 }
 
 async function oldMute(args) {
@@ -107,8 +109,8 @@ module.exports = {
 		)
 
 		if (!args.time) commandFormat(interaction, args, member, false)
+		else if (!ms(args.time))
+			return interaction.reply('Please input a valid time.')
 		else commandFormat(interaction, args, member, true)
-
-		checkMutes(Bot)
 	}
 }

@@ -1,5 +1,4 @@
 const muteSchema = require('../models/mute.js')
-const ms = require('ms')
 
 module.exports = async Bot => {
 	let mutes = await muteSchema.find({ current: true })
@@ -14,10 +13,19 @@ module.exports = async Bot => {
 
 	let guild = await Bot.Client.guilds.fetch(Bot.Config.Guild)
 	for (let mute of mutes) {
-		if (mute.expires) {
-			let member = await guild.members.fetch(mute.userID)
+		if (mute.expires === null) continue
 
-			if (mute.expires.getTime() <= new Date().getTime()) {
+		let member = await guild.members.fetch(mute.userID)
+		let now = Date.now()
+
+		if (mute.expires.getTime() <= now) {
+			member.roles.remove(Bot.Config.MuteRole)
+
+			console.log(`V -> Moderation -> Mute -> Expired -> ${mute.userID}`)
+
+			setCurrent(mute)
+		} else
+			setTimeout(() => {
 				member.roles.remove(Bot.Config.MuteRole)
 
 				console.log(
@@ -25,7 +33,7 @@ module.exports = async Bot => {
 				)
 
 				setCurrent(mute)
-			}
-		}
+			}, mute.expires.getTime() - now)
 	}
+	console.log('V -> Checked -> Mutes')
 }

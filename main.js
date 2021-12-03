@@ -12,7 +12,7 @@ Bot.Client.once('ready', async () => {
 
 	CommandHandler.Run()
 
-	setInterval(() => checkMutes(Bot), 1000)
+	checkMutes(Bot)
 })
 
 Bot.Client.login(Bot.Config.Token)
