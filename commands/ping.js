@@ -5,6 +5,6 @@ module.exports = {
 	permissions: ['ADMINISTRATOR'],
 
 	run: interaction => {
-		return interaction.reply('Pong!')
+		return interaction.reply({ content: 'Pong!', ephemeral: true })
 	}
 }

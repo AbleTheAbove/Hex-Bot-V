@@ -51,9 +51,15 @@ async function commandFormat(interaction, args, member, shouldExpire) {
 
 		let embed = new Bot.Discord.MessageEmbed()
 			.setTitle('Mute [OFF]')
-			.addField('User', `<@${args.user}>`)
-			.addField('Staff', `<@${interaction.member.id}>`)
+			.setDescription(`Un-Muted <@${args.user}>`)
+			.setAuthor(member.user.tag, member.user.displayAvatarURL())
+			.setThumbnail(member.user.displayAvatarURL())
+			.setFooter(
+				interaction.member.user.tag,
+				interaction.member.user.displayAvatarURL()
+			)
 			.setColor('#00ff00')
+			.setTimestamp()
 
 		return interaction.reply({ embeds: [embed] })
 	}
@@ -62,12 +68,18 @@ async function commandFormat(interaction, args, member, shouldExpire) {
 
 	let embed = new Bot.Discord.MessageEmbed()
 		.setTitle('Mute [ON]')
-		.addField('User', `<@${args.user}>`)
-		.addField('Staff', `<@${interaction.member.id}>`)
+		.setDescription(`Muted <@${args.user}>`)
 		.setColor('#ff0000')
+		.setAuthor(member.user.tag, member.user.displayAvatarURL())
+		.setThumbnail(member.user.displayAvatarURL())
+		.setFooter(
+			interaction.member.user.tag,
+			interaction.member.user.displayAvatarURL()
+		)
+		.setTimestamp()
 
-	if (args.reason) embed.addField('Reason', args.reason)
-	if (shouldExpire) embed.addField('Time', args.time)
+	if (args.reason) embed.addField('Reason', args.reason, true)
+	if (shouldExpire) embed.addField('Time', args.time, true)
 
 	return interaction.reply({ embeds: [embed] })
 }
@@ -75,7 +87,7 @@ async function commandFormat(interaction, args, member, shouldExpire) {
 module.exports = {
 	name: 'mute',
 	description: 'A command to mute guild members.',
-	syntax: '/mute <!member> <?time>',
+	syntax: '/mute <!member> <?reason> <?time>',
 	permissions: ['MANAGE_MEMBERS'],
 
 	options: [

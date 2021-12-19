@@ -1,6 +1,6 @@
 function updateConfig() {
 	let request = new XMLHttpRequest()
-	request.open('GET', 'http://localhost:3000/api/config')
+	request.open('GET', `http://localhost:3000/api/config`)
 	request.send()
 
 	request.onload = err => {

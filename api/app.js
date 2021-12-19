@@ -1,5 +1,4 @@
 const express = require('express')
-const Bot = require('../assets/Bot.js')
 const fs = require('fs')
 const cors = require('cors')
 

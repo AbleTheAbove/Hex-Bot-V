@@ -22,7 +22,8 @@ module.exports = {
 		intents: [
 			discord.Intents.FLAGS.GUILD_MESSAGES,
 			discord.Intents.FLAGS.GUILD_MEMBERS,
-			discord.Intents.FLAGS.GUILDS
+			discord.Intents.FLAGS.GUILDS,
+			discord.Intents.FLAGS.GUILD_BANS
 		]
 	})
 }
