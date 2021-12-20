@@ -20,9 +20,11 @@ module.exports = (Bot, interaction, cmd, args) => {
 		}
 	})
 
-	log.save()
-		.then(res => console.log(res))
-		.catch(err => console.error(err))
+	log.save().catch(err => console.error(err))
 
-	return console.log('V -> Mongoose -> Log -> Slash Command')
+	return console.log(
+		`V -> Mongoose -> Log -> Slash Command -> ${
+			cmd.name[0].toUpperCase() + cmd.name.slice(1)
+		} -> User -> ${interaction.member.id}`
+	)
 }

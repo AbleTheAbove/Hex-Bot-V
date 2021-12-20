@@ -48,12 +48,16 @@ async function BanFormat(interaction, args, guild, banned) {
 		}
 
 		if (!member)
-			return interaction.reply(
-				'That member is not in this server, or banned!'
-			)
+			return interaction.reply({
+				content: 'That member is not in this server, or banned!',
+				ephemeral: true
+			})
 
 		if (member.permissions.has('ADMINISTRATOR'))
-			return interaction.reply(`You can't ban that person!`)
+			return interaction.reply({
+				content: `You can't ban that person!`,
+				ephemeral: true
+			})
 
 		await guild.bans
 			.create(args.user)

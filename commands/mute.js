@@ -1,53 +1,17 @@
 const Bot = require('../assets/Bot.js')
-const toggleMute = require('../assets/scripts/toggleMute.js')
 const muteSchema = require('../assets/models/mute.js')
 const ms = require('ms')
 
-const checkMutes = require('../assets/scripts/checkMutes.js')
-
-async function newMute(args, interaction, shouldExpire) {
-	let expires = null
-
-	if (shouldExpire) expires = new Date(Date.now() + ms(args.time))
-
-	const mute = new muteSchema({
-		_id: Bot.MongoDB.Mongoose.Types.ObjectId(),
-		expires: expires,
-		current: true,
-		userID: args.user,
-		staffID: interaction.member.id,
-		reason: args.reason
-	})
-
-	await mute.save()
-
-	checkMutes(Bot)
-}
-
-async function oldMute(args) {
-	await muteSchema.updateMany(
-		{
-			userID: args.user,
-			current: true
-		},
-		{
-			$set: {
-				current: false
-			}
-		}
-	)
-}
+const mute = require('../assets/scripts/mute.js')
 
 async function commandFormat(interaction, args, member, shouldExpire) {
-	toggleMute(member)
-
 	const currentlyMuted = await muteSchema.find({
 		current: true,
 		userID: args.user
 	})
 
 	if (currentlyMuted.length) {
-		oldMute(args) // Set old mutes current to false
+		mute.remove(args, member) // Set old mutes current to false
 
 		let embed = new Bot.Discord.MessageEmbed()
 			.setTitle('Mute [OFF]')
@@ -64,7 +28,7 @@ async function commandFormat(interaction, args, member, shouldExpire) {
 		return interaction.reply({ embeds: [embed] })
 	}
 
-	newMute(args, interaction, shouldExpire)
+	mute.new(args, interaction, member, shouldExpire)
 
 	let embed = new Bot.Discord.MessageEmbed()
 		.setTitle('Mute [ON]')
@@ -122,7 +86,10 @@ module.exports = {
 
 		if (!args.time) commandFormat(interaction, args, member, false)
 		else if (!ms(args.time))
-			return interaction.reply('Please input a valid time.')
+			return interaction.reply({
+				content: 'Please input a valid time.',
+				ephemeral: true
+			})
 		else commandFormat(interaction, args, member, true)
 	}
 }

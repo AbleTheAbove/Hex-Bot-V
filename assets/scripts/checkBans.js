@@ -1,6 +1,6 @@
 const banSchema = require('../models/ban.js')
 
-async function expireBan(Bot, ban, guild) {
+async function expireBan(ban, guild) {
 	console.log(`V -> Moderation -> Ban -> Expired -> ${ban.userID}`)
 
 	await banSchema.updateOne(
@@ -22,7 +22,7 @@ async function expireBan(Bot, ban, guild) {
 }
 
 module.exports = async Bot => {
-	let bans = await banSchema.find({ current: true })
+	const bans = await banSchema.find({ current: true })
 
 	const guild = await Bot.Client.guilds.fetch(Bot.Config.Guild)
 
@@ -31,12 +31,9 @@ module.exports = async Bot => {
 
 		let now = Date.now()
 
-		if (ban.expires.getTime() <= now) expireBan(Bot, ban, guild)
+		if (ban.expires.getTime() <= now) expireBan(ban, guild)
 		else
-			setTimeout(
-				() => expireBan(Bot, ban, guild),
-				ban.expires.getTime() - now
-			)
+			setTimeout(() => expireBan(ban, guild), ban.expires.getTime() - now)
 	}
 
 	console.log('V -> Checked -> Bans')
