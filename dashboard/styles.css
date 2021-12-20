@@ -12,33 +12,6 @@ body {
 	color: var(--default-text-color);
 }
 
-.nav {
-	background-color: var(--default-div-color);
-	position: fixed;
-	top: 10%;
-	margin-left: 0;
-	height: 80%;
-	width: 100px;
-	border-radius: 10px;
-	text-align: center;
-}
-
-.nav ul {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-}
-
-.nav ul li {
-	margin-top: 10px;
-}
-
-.nav ul li img {
-	width: 80px;
-	height: 80px;
-	cursor: pointer;
-}
-
 .config {
 	margin: auto;
 	width: 60%;

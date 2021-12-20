@@ -1,4 +1,5 @@
 const ms = require('ms')
+const { Client } = require('../assets/Bot.js')
 const Bot = require('../assets/Bot.js')
 
 const warnSchema = require('../assets/models/warn.js')
@@ -94,6 +95,16 @@ module.exports = {
 		let warns
 
 		if (args.user) {
+			if (
+				!(
+					await Client.guilds.fetch(Bot.Config.Guild)
+				).members.cache.get(args.user)
+			)
+				return interaction.reply({
+					content: 'That member is not in the server.',
+					ephemeral: true
+				})
+
 			warns = await warnSchema.find({
 				current: true,
 				userID: args.user
@@ -175,6 +186,10 @@ module.exports = {
 				)
 			}
 
+			console.log(
+				`V -> Moderation -> Warned -> ${args.user} -> Staff -> ${interaction.member.id}`
+			)
+
 			return interaction.reply({ embeds: embeds })
 		} else if (type === 'get') {
 			let embeds = []
@@ -238,7 +253,11 @@ module.exports = {
 			user = await Bot.Client.users.fetch(warn.userID)
 			let staff = await await Bot.Client.users.fetch(warn.staffID)
 
-			interaction.reply({
+			console.log(
+				`V -> Moderation -> Removed -> Warn -> ${warn._id} -> Staff -> ${staff.id}`
+			)
+
+			return interaction.reply({
 				embeds: [
 					new Bot.Discord.MessageEmbed()
 						.setTitle('Warn')

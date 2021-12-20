@@ -80,6 +80,12 @@ module.exports = {
 
 		let member = guild.members.cache.get(args.user)
 
+		if (!member)
+			return interaction.reply({
+				content: 'That member is not in the server.',
+				ephemeral: true
+			})
+
 		console.log(
 			`V -> Moderation -> Toggled Mute -> ${interaction.member.id} -> ${args.user}`
 		)
