@@ -1,0 +1,13 @@
+Commands:
+    - Purge
+    - Ticket
+    - Lock (Channel)
+    - Kick
+    - Warn (Finish)
+    - Points
+    - Announcement
+    - Role
+
+Extra:
+    - Chat Filter
+    - Finish Website
