@@ -1,7 +1,8 @@
 module.exports = {
 	name: 'purge',
 	description: 'A command to purge messages in a channel.',
-	permissions: 'MANAGE_MESSAGES',
+	permissions: ['MANAGE_MESSAGES'],
+	syntax: '/purge <?amount>',
 
 	options: [
 		{

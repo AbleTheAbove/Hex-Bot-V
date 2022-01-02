@@ -4,7 +4,7 @@ async function expireWarn(warn) {
 	console.log(`V -> Moderation -> Warn -> Expired -> ${warn.userID}`)
 
 	await warnSchema.updateOne(
-		{ _id: mute._id },
+		{ _id: warn._id },
 		{
 			$set: { current: false }
 		}

@@ -1,10 +1,8 @@
 Commands:
-    - Purge
     - Ticket
     - Lock (Channel)
     - Kick
     - Points
-    - Announcement
     - Role
 
 Extra:

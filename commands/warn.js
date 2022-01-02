@@ -18,7 +18,8 @@ const severityText = severity =>
 module.exports = {
 	name: 'warn',
 	description: 'A command to warn users.',
-	permissions: 'MANAGE_MEMBERS',
+	permissions: ['MANAGE_MEMBERS'],
+	syntax: '/warn create <!user> <!reason> <!severity>\n/warn remove <!identifier>\n/warn get <!user>',
 
 	options: [
 		{
@@ -130,12 +131,14 @@ module.exports = {
 
 			let member = guild.members.cache.get(args.user)
 
-			let severity
+			let severity = 0
 
 			if (warns.length > 0)
 				severity = warns
 					.map(obj => obj.severity)
 					.reduce((a, b) => a + b)
+
+			severity += parseInt(args.severity)
 
 			const embeds = []
 

@@ -29,6 +29,7 @@ module.exports = {
 	name: 'help',
 	description: 'A command to get help on other commands.',
 	syntax: '/help <?cmd>',
+
 	options: [
 		{
 			name: 'cmd',
@@ -54,7 +55,7 @@ module.exports = {
 
 			let embeds = []
 
-			files.forEach(file => embeds.push(getHelpEmbed(file)))
+			for (file of files) embeds.push(getHelpEmbed(file))
 
 			return interaction.reply({ embeds: embeds })
 		})
