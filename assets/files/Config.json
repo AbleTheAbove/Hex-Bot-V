@@ -4,5 +4,12 @@
 	"Guild": "837767108867784754",
 	"MongoDB": {
 		"Connect": "mongodb+srv://hex-bot-v:HexBotLoginToken@cluster0.xcstj.mongodb.net/Data"
+	},
+	"Points": {
+		"Recruit": { "req": 22, "role": "928480177065975819" },
+		"Soldier": { "req": 26, "role": "928480216937017354" },
+		"Elite": { "req": 31, "role": "928480251179311165" },
+		"Captain": { "req": 35, "role": "928480282691141662" },
+		"Seperator": "928480318724399204"
 	}
 }

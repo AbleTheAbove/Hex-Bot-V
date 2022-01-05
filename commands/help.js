@@ -49,7 +49,10 @@ module.exports = {
 				)
 
 				if (file)
-					return interaction.reply({ embeds: [getHelpEmbed(file)] })
+					return interaction.reply({
+						embeds: [getHelpEmbed(file)],
+						ephemeral: true
+					})
 				else return interaction.reply('Could not find that command.')
 			}
 
@@ -57,7 +60,7 @@ module.exports = {
 
 			for (file of files) embeds.push(getHelpEmbed(file))
 
-			return interaction.reply({ embeds: embeds })
+			return interaction.reply({ embeds: embeds, ephemeral: true })
 		})
 	}
 }
