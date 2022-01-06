@@ -25,14 +25,14 @@ async function checkPerms(user) {
 
 	let member = await guild.members.fetch(user)
 
-	if (member.permissions.has('MANAGE_MEMBERS')) return true
+	if (member.permissions.has('MANAGE_MESSAGES')) return true
 	else return false
 }
 
 module.exports = {
 	name: 'points',
 	description: 'A command to manage the points system.',
-	syntax: '/points get <!user>\n/points set <!user> <!amount> [Manage Members]\n/points add <!user> <!amount> [Manage Members]\n/points sub <!user> <!amount> [Manage Members]',
+	syntax: '/points get <!user>\n/points set <!user> <!amount> [Manage Messages]\n/points add <!user> <!amount> [Manage Messages]\n/points sub <!user> <!amount> [Manage Messages]',
 
 	options: [
 		{
@@ -118,12 +118,11 @@ module.exports = {
 			? 'set'
 			: null
 
-		let args, target, user, embed, points
+		let args = types[type]
+		let target, user, embed, points
 
 		switch (type) {
 			case 'get':
-				args = types.get
-
 				target = await Bot.Client.users.fetch(args.user)
 				user = interaction.member.user
 
@@ -151,8 +150,6 @@ module.exports = {
 						content: `You don't have permission to do that!`,
 						ephemeral: true
 					})
-
-				args = types.sub
 
 				target = await Bot.Client.users.fetch(args.user)
 				user = interaction.member.user
@@ -189,8 +186,6 @@ module.exports = {
 						ephemeral: true
 					})
 
-				args = types.add
-
 				target = await Bot.Client.users.fetch(args.user)
 				user = interaction.member.user
 
@@ -225,8 +220,6 @@ module.exports = {
 						content: `You don't have permission to do that!`,
 						ephemeral: true
 					})
-
-				args = types.set
 
 				target = await Bot.Client.users.fetch(args.user)
 				user = interaction.member.user

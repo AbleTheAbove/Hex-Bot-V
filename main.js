@@ -15,9 +15,9 @@ Bot.Client.once('ready', async () => {
 
 	CommandHandler.Run()
 
-	checkMutes(Bot)
-	checkBans(Bot)
-	checkWarns()
+	await checkMutes(Bot)
+	await checkBans(Bot)
+	await checkWarns()
 })
 
 Bot.Client.login(Bot.Config.Token)

@@ -21,15 +21,7 @@ module.exports = async user => {
 		await Bot.Client.guilds.fetch(Bot.Config.Guild)
 	).members.fetch(user)
 
-	if (x >= Points.Captain.req) {
-		await removeOldRoles(member).then(
-			async () => await member.roles.add(Points.Captain.role)
-		)
-	} else if (x >= Points.Elite.req) {
-		await removeOldRoles(member).then(
-			async () => await member.roles.add(Points.Elite.role)
-		)
-	} else if (x >= Points.Soldier.req) {
+	if (x >= Points.Soldier.req) {
 		await removeOldRoles(member).then(
 			async () => await member.roles.add(Points.Soldier.role)
 		)
