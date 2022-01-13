@@ -8,15 +8,15 @@ module.exports = Bot => {
 			let cmd = require(`../../../commands/${interaction.commandName}.js`)
 
 			if (
-				interaction.member.permissions.has(cmd.permissions) ||
-				!cmd.permissions
+				!cmd.permissions ||
+				interaction.member.permissions.has(cmd.permissions)
 			) {
 				let args = optionFormatter(interaction)
 
 				cmdLog(Bot, interaction, cmd, args)
 
 				return cmd.run(interaction, args)
-			} else interaction.reply("You don't have permission to do that!")
+			} else interaction.reply(`You don't have permission to do that!`)
 		}
 	})
 }

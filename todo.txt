@@ -1,6 +1,5 @@
 Commands:
     - Lock (Channel)
-    - Kick
     - Role
 
 Extra:

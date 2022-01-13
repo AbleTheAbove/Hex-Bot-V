@@ -18,7 +18,7 @@ const severityText = severity =>
 module.exports = {
 	name: 'warn',
 	description: 'A command to warn users.',
-	permissions: ['MANAGE_MEMBERS'],
+	permissions: ['BAN_MEMBERS'],
 	syntax: '/warn create <!user> <!reason> <!severity>\n/warn remove <!identifier>\n/warn get <!user>',
 
 	options: [

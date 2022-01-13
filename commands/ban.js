@@ -99,7 +99,7 @@ module.exports = {
 	name: 'ban',
 	description: 'A command to ban guild members.',
 	syntax: '/ban <!member> <?reason> <?time>',
-	permissions: ['MANAGE_MEMBERS'],
+	permissions: ['BAN_MEMBERS'],
 
 	options: [
 		{

@@ -52,7 +52,7 @@ module.exports = {
 	name: 'mute',
 	description: 'A command to mute guild members.',
 	syntax: '/mute <!member> <?reason> <?time>',
-	permissions: ['MANAGE_MEMBERS'],
+	permissions: ['MANAGE_MESSAGES'],
 
 	options: [
 		{
