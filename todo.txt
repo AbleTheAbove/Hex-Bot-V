@@ -1,6 +1,0 @@
-Commands:
-    - Lock (Channel)
-    - Role
-
-Extra:
-    - Chat Filter

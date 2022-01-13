@@ -2,9 +2,11 @@
 	"MuteRole": "838909955503292486",
 	"Token": "OTA4NDAwMTA1OTA2OTE3Mzc3.YY1Lhg.Ol821XHdo23jDmGi1R1lC2HGz8Y",
 	"Guild": "837767108867784754",
+
 	"MongoDB": {
 		"Connect": "mongodb+srv://hex-bot-v:HexBotLoginToken@cluster0.xcstj.mongodb.net/Data"
 	},
+
 	"Points": {
 		"Recruit": { "req": 22, "role": "928480177065975819" },
 		"Soldier": { "req": 26, "role": "928480216937017354" },
@@ -12,6 +14,30 @@
 		"Captain": { "req": 35, "role": "928480282691141662" },
 		"Seperator": "928480318724399204"
 	},
+
+	"Roles": {
+		"Guild_Member": "930988658293608468",
+		"Ally": "930988713771675649",
+		"In_Game": "930988734428635187",
+		"Interview": "930988770604507237"
+	},
+
 	"Ticket_Category": "839299776276201494",
-	"Staff": "928795695446638632"
+	"Staff": "928795695446638632",
+
+	"Blacklist": [
+		"sucky",
+		"holocaust",
+		"rape",
+		"nigga",
+		"nigger",
+		"r4pe",
+		"grape",
+		"dick",
+		"penis",
+		"vagina",
+		"tits",
+		"boobs",
+		"hex is a nerd"
+	]
 }

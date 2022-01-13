@@ -1,5 +1,8 @@
 const Bot = require('./assets/Bot.js')
+
 const CommandHandler = require('./handlers/command/Handler.js')
+const Chat = require('./handlers/filter/Chat.js')
+
 const API = require('./api/app.js')
 
 const checkMutes = require('./assets/scripts/checkMutes.js')
@@ -18,6 +21,8 @@ Bot.Client.once('ready', async () => {
 	await checkMutes(Bot)
 	await checkBans(Bot)
 	await checkWarns()
+
+	await Chat.Filter(Bot)
 })
 
 Bot.Client.login(Bot.Config.Token)
