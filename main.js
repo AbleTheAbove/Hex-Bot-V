@@ -25,4 +25,9 @@ Bot.Client.once('ready', async () => {
 	await Chat.Filter(Bot)
 })
 
+Bot.Client.on(
+	'guildMemberAdd',
+	async member => await member.roles.add(Bot.Config.Roles.Interview)
+)
+
 Bot.Client.login(Bot.Config.Token)

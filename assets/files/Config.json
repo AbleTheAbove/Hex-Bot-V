@@ -1,29 +1,29 @@
 {
-	"MuteRole": "838909955503292486",
+	"MuteRole": "863148229848072264",
 	"Token": "OTA4NDAwMTA1OTA2OTE3Mzc3.YY1Lhg.Ol821XHdo23jDmGi1R1lC2HGz8Y",
-	"Guild": "837767108867784754",
+	"Guild": "863128857011028008",
 
 	"MongoDB": {
 		"Connect": "mongodb+srv://hex-bot-v:HexBotLoginToken@cluster0.xcstj.mongodb.net/Data"
 	},
 
 	"Points": {
-		"Recruit": { "req": 22, "role": "928480177065975819" },
-		"Soldier": { "req": 26, "role": "928480216937017354" },
-		"Elite": { "req": 31, "role": "928480251179311165" },
-		"Captain": { "req": 35, "role": "928480282691141662" },
-		"Seperator": "928480318724399204"
+		"Recruit": { "req": 22, "role": "863140470565240872" },
+		"Soldier": { "req": 26, "role": "863139705569673227" },
+		"Elite": { "req": 31, "role": "863139416758943765" },
+		"Captain": { "req": 35, "role": "863138146039496716" },
+		"Seperator": "863147209028927519"
 	},
 
 	"Roles": {
-		"Guild_Member": "930988658293608468",
-		"Ally": "930988713771675649",
-		"In_Game": "930988734428635187",
-		"Interview": "930988770604507237"
+		"Guild_Member": "863147539523960832",
+		"Ally": "863578585489997824",
+		"In_Game": "863142352671604806",
+		"Interview": "863142448779624459"
 	},
 
 	"Ticket_Category": "839299776276201494",
-	"Staff": "928795695446638632",
+	"Staff": "864258557481320483",
 
 	"Blacklist": [
 		"sucky",
