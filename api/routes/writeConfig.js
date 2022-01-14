@@ -2,21 +2,15 @@ const fs = require('fs')
 const ConfigDir = './assets/files/Config.json'
 
 module.exports = app =>
-	app.post('/api/config/:setting/:value', (req, res) => {
-		let { setting } = req.params
-		let { value } = req.params
+	app.put('/api/config', (req, res) => {
+		let newConfig = req.body
 
-		let Config = JSON.parse(fs.readFileSync(ConfigDir, 'utf8'))
+		let Config = require(`../.${ConfigDir}`)
 
-		if (!Config[setting])
-			return res.status(404).send('Could not find that setting.')
-
-		Config[setting] = value
+		Object.assign(Config, newConfig)
 
 		fs.writeFileSync(ConfigDir, JSON.stringify(Config))
 
-		console.log(
-			`V -> API -> Post -> Request -> Set Setting -> ${setting} -> ${value}`
-		)
-		res.send(`Set setting: ${setting} to ${value}`)
+		console.log(`V -> API -> Post -> Request -> ${newConfig}`)
+		res.send(Config)
 	})

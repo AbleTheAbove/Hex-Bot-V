@@ -2,29 +2,25 @@
 	"MuteRole": "863148229848072264",
 	"Token": "OTA4NDAwMTA1OTA2OTE3Mzc3.YY1Lhg.Ol821XHdo23jDmGi1R1lC2HGz8Y",
 	"Guild": "863128857011028008",
-
 	"MongoDB": {
 		"Connect": "mongodb+srv://hex-bot-v:HexBotLoginToken@cluster0.xcstj.mongodb.net/Data"
 	},
-
 	"Points": {
-		"Recruit": { "req": 22, "role": "863140470565240872" },
-		"Soldier": { "req": 26, "role": "863139705569673227" },
-		"Elite": { "req": 31, "role": "863139416758943765" },
-		"Captain": { "req": 35, "role": "863138146039496716" },
+		"Recruit": { "req": "21", "role": "863140470565240872" },
+		"Soldier": { "req": "26", "role": "863139705569673227" },
+		"Elite": { "req": "31", "role": "863139416758943765" },
+		"Captain": { "req": "35", "role": "863138146039496716" },
 		"Seperator": "863147209028927519"
 	},
-
 	"Roles": {
 		"Guild_Member": "863147539523960832",
 		"Ally": "863578585489997824",
 		"In_Game": "863142352671604806",
 		"Interview": "863142448779624459"
 	},
-
 	"Ticket_Category": "839299776276201494",
 	"Staff": "864258557481320483",
-
+	"API_Port": 2744,
 	"Blacklist": [
 		"sucky",
 		"holocaust",

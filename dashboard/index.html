@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Home | V</title>
+		<script defer src="main.js"></script>
+	</head>
+	<body>
+		<form id="settings">
+			<div class="input-wrapper">
+				<label for="token">Token</label>
+				<input type="text" id="token" />
+			</div>
+			<div class="input-wrapper">
+				<label for="guild">Guild</label>
+				<input type="text" id="guild" />
+			</div>
+			<div class="input-wrapper">
+				<label for="tickets">Ticket Category</label>
+				<input type="text" id="tickets" />
+			</div>
+			<div class="input-wrapper">
+				<label for="mongo">MongoDB Connect</label>
+				<input type="text" id="mongo" />
+			</div>
+			<div class="input-wrapper">
+				<label for="blacklist">Blacklist</label>
+				<input type="text" id="blacklist" />
+			</div>
+			<h2>Roles</h2>
+			<div class="input-wrapper role">
+				<label for="mute">Mute</label>
+				<input type="text" id="mute" />
+			</div>
+			<div class="input-wrapper role">
+				<label for="staff">Staff</label>
+				<input type="text" id="staff" />
+			</div>
+			<br />
+			<div class="input-wrapper role">
+				<label for="gm">Guild Member</label>
+				<input type="text" id="gm" />
+			</div>
+			<div class="input-wrapper role">
+				<label for="ally">Ally</label>
+				<input type="text" id="ally" />
+			</div>
+			<br />
+			<div class="input-wrapper role">
+				<label for="Seperator">Seperator</label>
+				<input type="text" id="seperator" />
+			</div>
+			<h2>Tryout Roles</h2>
+			<div class="input-wrapper role">
+				<label for="ingame">In Game Tryout</label>
+				<input type="text" id="ingame" />
+			</div>
+			<div class="input-wrapper role">
+				<label for="interview">Interview Tryout</label>
+				<input type="text" id="interview" />
+			</div>
+			<h2>In Game Roles</h2>
+			<div class="input-wrapper role">
+				<label for="captain-role">Captain Role</label>
+				<input type="text" id="captain-role" />
+			</div>
+			<div class="input-wrapper role">
+				<label for="captain-req">Captain Requirement</label>
+				<input type="number" id="captain-req" />
+			</div>
+			<br />
+			<div class="input-wrapper role">
+				<label for="elite-role">Elite Role</label>
+				<input type="text" id="elite-role" />
+			</div>
+			<div class="input-wrapper role">
+				<label for="elite-req">Elite Requirement</label>
+				<input type="number" id="elite-req" />
+			</div>
+			<br />
+			<div class="input-wrapper role">
+				<label for="soldier-role">Soldier Role</label>
+				<input type="text" id="soldier-role" />
+			</div>
+			<div class="input-wrapper role">
+				<label for="soldier-req">Soldier Requirement</label>
+				<input type="number" id="soldier-req" />
+			</div>
+			<br />
+			<div class="input-wrapper role">
+				<label for="recruit-role">Recruit Role</label>
+				<input type="text" id="recruit-role" />
+			</div>
+			<div class="input-wrapper role">
+				<label for="recruit-req">Recruit Requirement</label>
+				<input type="number" id="recruit-req" />
+			</div>
+			<button onclick="saveConfig()">Save</button>
+		</form>
+	</body>
+</html>
