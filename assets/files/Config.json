@@ -6,7 +6,7 @@
 		"Connect": "mongodb+srv://hex-bot-v:HexBotLoginToken@cluster0.xcstj.mongodb.net/Data"
 	},
 	"Points": {
-		"Recruit": { "req": "21", "role": "863140470565240872" },
+		"Recruit": { "req": "22", "role": "863140470565240872" },
 		"Soldier": { "req": "26", "role": "863139705569673227" },
 		"Elite": { "req": "31", "role": "863139416758943765" },
 		"Captain": { "req": "35", "role": "863138146039496716" },
