@@ -137,7 +137,13 @@ module.exports = {
 				)
 				break
 			case 'ally':
-				await commandFormat(target, Bot.Config.Roles.Ally, 'Ally', user)
+				await commandFormat(
+					target,
+					Bot.Config.Roles.Ally,
+					'Ally',
+					user,
+					interaction
+				)
 				break
 			case 'ingame':
 				await commandFormat(
