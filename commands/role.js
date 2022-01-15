@@ -141,7 +141,6 @@ module.exports = {
 					target,
 					Bot.Config.Roles.Ally,
 					'Ally',
-					user,
 					interaction
 				)
 				break
