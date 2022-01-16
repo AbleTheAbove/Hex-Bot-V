@@ -5,7 +5,7 @@ async function checkStatus() {
 
 	const indicator = document.getElementById('status')
 
-	if (state === true) indicator.style.backgroundColor = 'lime'
+	if (state.ok) indicator.style.backgroundColor = 'lime'
 	else indicator.style.backgroundColor = 'red'
 }
 
