@@ -3,7 +3,7 @@ async function checkStatus() {
 		'http://dbhb-gbn-01.chaoticdestiny.host:2744/api/status'
 	)
 
-	const indicator = getElementById('status')
+	const indicator = document.getElementById('status')
 
 	if (state === true) indicator.style.backgroundColor = 'lime'
 	else indicator.style.backgroundColor = 'red'
