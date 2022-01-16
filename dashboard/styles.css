@@ -150,25 +150,6 @@ h1 {
 	display: none;
 }
 
-@media screen and (max-width: 800px) {
-	#nav {
-		display: none;
-	}
-	#home {
-		display: block;
-		position: fixed;
-		top: 10px;
-		left: 10px;
-	}
-}
-
-#home_nav {
-	margin: auto;
-	width: 50%;
-	height: 80%;
-	text-align: center;
-}
-
 h2 {
 	display: inline-block;
 	color: #bbb;
@@ -199,6 +180,34 @@ h2:after {
 
 h2:hover:after {
 	width: 8em;
+}
+
+@media screen and (max-width: 800px) {
+	#nav {
+		display: none;
+	}
+	#home {
+		display: block;
+		position: fixed;
+		top: 10px;
+		left: 10px;
+	}
+
+	h2 {
+		font-size: 2em;
+		width: 7em;
+	}
+
+	h2:hover:after {
+		width: 7em;
+	}
+}
+
+#home_nav {
+	margin: auto;
+	width: 50%;
+	height: 80%;
+	text-align: center;
 }
 
 .lime {
