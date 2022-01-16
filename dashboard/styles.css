@@ -74,7 +74,7 @@ body {
 	border-radius: 0;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
-	background: linear-gradient(90deg, #3700b3, #3700b3) center bottom/0 0.15em
+	background: linear-gradient(90deg, #3700b3, #6200ee) center bottom/0 0.15em
 			no-repeat,
 		linear-gradient(90deg, #303030, #303030) left bottom/100% 0.15em
 			no-repeat,
@@ -140,6 +140,8 @@ h1 {
 	color: #ccc;
 	font-size: 24px;
 	border-left: 4px solid transparent;
+	display: flex;
+	align-items: center;
 }
 
 #nav ul a {
@@ -212,4 +214,13 @@ h2:hover:after {
 
 .lime {
 	color: lime;
+}
+
+#status {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-color: red;
+	margin-left: 80px;
+	border-radius: 25%;
 }

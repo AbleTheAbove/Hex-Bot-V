@@ -1,3 +1,16 @@
+async function checkStatus() {
+	const state = await fetch(
+		'http://dbhb-gbn-01.chaoticdestiny.host:2744/api/status'
+	)
+
+	const indicator = getElementById('status')
+
+	if (state === true) indicator.style.backgroundColor = 'lime'
+	else indicator.style.backgroundColor = 'red'
+}
+
+setInterval(checkStatus(), 5000)
+
 async function updateConfig(section) {
 	const Config = await (
 		await fetch('http://dbhb-gbn-01.chaoticdestiny.host:2744/api/config', {
