@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../styles.css" />
+		<title>Settings | Hex Bot V</title>
+		<script defer src="../main.js"></script>
+	</head>
+	<body onload="updateConfig('tryoutroles')">
+		<div id="nav">
+			<ul>
+				<a href="../index.html"><li>HOME</li></a>
+				<hr />
+				<a href="general.html"><li>GENERAL</li></a>
+				<a href="ingame.html"><li>IN GAME ROLES</li></a>
+				<a href="discordroles.html"><li>DISCORD ROLES</li></a>
+				<a href="tryoutroles.html"
+					><li style="border-left: 4px solid #6200ee">
+						TRYOUT ROLES
+					</li></a
+				>
+			</ul>
+		</div>
+		<a href="../index.html" id="home"
+			><img src="../imgs/icon-home.svg" width="64px" />
+		</a>
+
+		<h1 id="title">Tryout Roles</h1>
+
+		<label class="input-wrapper">
+			<input type="text" id="interview" placeholder="&nbsp;" />
+			<span class="placeholder">Interview Tryout</span>
+		</label>
+		<label class="input-wrapper">
+			<input type="text" id="ingame" placeholder="&nbsp;" />
+			<span class="placeholder">In Game Tryout</span>
+		</label>
+
+		<button onclick="saveConfig('tryoutroles')">SAVE SETTINGS</button>
+
+		<script defer src="../main.js"></script>
+		<script defer src="../scripts/dirty.js"></script>
+	</body>
+</html>

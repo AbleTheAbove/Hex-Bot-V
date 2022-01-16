@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../styles.css" />
+		<title>Settings | Hex Bot V</title>
+		<script defer src="../main.js"></script>
+	</head>
+	<body onload="updateConfig('ingame')">
+		<div id="nav">
+			<ul>
+				<a href="../index.html"><li>HOME</li></a>
+				<hr />
+				<a href="general.html"><li>GENERAL</li></a>
+				<a href="ingame.html">
+					<li style="border-left: 4px solid #6200ee">
+						IN GAME ROLES
+					</li>
+				</a>
+				<a href="discordroles.html"><li>DISCORD ROLES</li></a>
+				<a href="tryoutroles.html"><li>TRYOUT ROLES</li></a>
+			</ul>
+		</div>
+		<a href="../index.html" id="home"
+			><img src="../imgs/icon-home.svg" width="64px"
+		/></a>
+
+		<h1 id="title">In Game Roles</h1>
+
+		<label class="input-wrapper">
+			<input type="text" id="captain-role" placeholder="&nbsp;" />
+			<span class="placeholder">Captain Role</span>
+		</label>
+		<label class="input-wrapper">
+			<input type="number" id="captain-req" placeholder="&nbsp;" />
+			<span class="placeholder">Captain Requirement</span> </label
+		><br />
+		<label class="input-wrapper">
+			<input type="text" id="elite-role" placeholder="&nbsp;" />
+			<span class="placeholder">Elite Role</span>
+		</label>
+		<label class="input-wrapper">
+			<input type="number" id="elite-req" placeholder="&nbsp;" />
+			<span class="placeholder">Elite Requirement</span> </label
+		><br />
+		<label class="input-wrapper">
+			<input type="text" id="soldier-role" placeholder="&nbsp;" />
+			<span class="placeholder">Soldier Role</span>
+		</label>
+		<label class="input-wrapper">
+			<input type="number" id="soldier-req" placeholder="&nbsp;" />
+			<span class="placeholder">Soldier Requirement</span> </label
+		><br />
+		<label class="input-wrapper">
+			<input type="text" id="recruit-role" placeholder="&nbsp;" />
+			<span class="placeholder">Recruit Role</span>
+		</label>
+		<label class="input-wrapper">
+			<input type="number" id="recruit-req" placeholder="&nbsp;" />
+			<span class="placeholder">Recruit Requirement</span>
+		</label>
+
+		<button onclick="saveConfig('ingame')">SAVE SETTINGS</button>
+
+		<script defer src="../main.js"></script>
+		<script defer src="../scripts/dirty.js"></script>
+	</body>
+</html>
