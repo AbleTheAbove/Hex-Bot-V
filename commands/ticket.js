@@ -64,14 +64,20 @@ module.exports = {
 						ephemeral: true
 					})
 
-				if (args.type)
+				if (args.type) {
 					if (
 						interaction.member.roles.cache.has(
 							Bot.Config.Roles.Interview
 						)
 					)
 						await createTicket(interaction.member.id, args.type)
-					else if (
+					else
+						return interaction.reply({
+							content: `You're not a tryout!`,
+							ephemeral: true
+						})
+
+					if (
 						interaction.member.roles.cache.has(
 							Bot.Config.Roles.In_Game
 						)
@@ -83,10 +89,12 @@ module.exports = {
 							ephemeral: true
 						})
 
-				return interaction.reply({
-					content: 'Ticket has been created.',
-					ephemeral: true
-				})
+					return interaction.reply({
+						content: 'Ticket has been created.',
+						ephemeral: true
+					})
+				}
+
 			case 'close':
 				if (
 					!(
