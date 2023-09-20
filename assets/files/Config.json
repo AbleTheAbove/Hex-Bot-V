@@ -1,9 +1,9 @@
 {
 	"MuteRole": "863148229848072264",
-	"Token": "OTA4NDAwMTA1OTA2OTE3Mzc3.YY1Lhg.Ol821XHdo23jDmGi1R1lC2HGz8Y",
+	"Token": "_",
 	"Guild": "863128857011028008",
 	"MongoDB": {
-		"Connect": "mongodb+srv://hex-bot-v:HexBotLoginToken@cluster0.xcstj.mongodb.net/Data"
+		"Connect": "_"
 	},
 	"Points": {
 		"Recruit": { "req": "22", "role": "863140470565240872" },
@@ -20,7 +20,7 @@
 	},
 	"Ticket_Category": "839299776276201494",
 	"Staff": "864258557481320483",
-	"API_Port": 2744,
+	"API_Port": _,
 	"Blacklist": [
 		"sucky",
 		"holocaust",
